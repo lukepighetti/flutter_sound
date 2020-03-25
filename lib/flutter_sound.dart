@@ -490,6 +490,13 @@ class FlutterSound {
     });
     return result;
   }
+
+  /// Dispose of underlying [StreamController]s
+  dispose(){
+    _recorderController?.close();
+    _dbPeakController?.close();
+    _playerController?.close();
+  }
 }
 
 class RecordStatus {
